@@ -95,7 +95,7 @@
 .page-header__nav-link:active,
 .page-header__tel:active,
 .page-header__e-mail:active {
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 767px) {
     color: $accent-color;
   }
 }
@@ -110,7 +110,7 @@
 .page-header__e-mail:hover,
 .page-header__tel:focus,
 .page-header__tel:hover {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     color: $accent-color;
   }
 }

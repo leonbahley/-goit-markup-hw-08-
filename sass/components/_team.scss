@@ -2,9 +2,15 @@
   background-color: $portfolio-btn-bkg;
   padding-top: 64px;
   padding-bottom: 64px;
+  margin: 0 auto;
+  @media screen and(min-width:768px) {
+    max-width: 768px;
+  }
+
   @media screen and(min-width:1200px) {
     padding-bottom: 94px;
     padding-top: 94px;
+    max-width: 1200px;
   }
 }
 .team__title {

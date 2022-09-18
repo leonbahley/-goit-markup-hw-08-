@@ -4,12 +4,15 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 40px;
+  @media screen and (max-width: 767px) {
+    max-width: 326px;
+  }
   @media screen and (min-width: 768px) {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
   }
   @media screen and (min-width: 1200px) {
     margin-bottom: 50px;
-    justify-content: center;
   }
 }
 
@@ -29,7 +32,7 @@
   border-radius: 4px;
   border: 0;
   padding: 6px 22px;
-  @media screen and (max-width: 767px), (min-width: 768px) {
+  @media screen and (max-width: 767px) {
     &:active {
       background-color: $accent-color;
       color: $white-color;
@@ -37,7 +40,7 @@
         0px 2px 2px rgba(0, 0, 0, 0.12);
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     transition-property: color, background-color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,6 +83,8 @@
   overflow: hidden;
 }
 .project__overlay {
+  width: 100%;
+  height: 100%;
   font-size: 18px;
   line-height: 1.56;
   color: $white-color;
@@ -92,27 +97,36 @@
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width:479px) {
+    padding: 24px;
+    font-size: 14px;
+  }
+  @media screen and (min-width: 480px) and (max-width:767px) {
     padding: 77px 24px;
   }
   @media screen and (min-width: 768px) {
     padding: 49px 24px 77px 24px;
   }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .grid__item:active .project__overlay {
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid__item:hover .project__overlay {
     transform: translateY(0);
   }
 }
 @media screen and (min-width: 1200px) {
   .grid__item:hover .project__overlay {
-    transform: translateY(0);
     padding: 63px 24px;
   }
 }
 
 .project__bordered-part {
   @extend %grid-item-bordered-part;
+  flex-grow: 1;
 }
 .project__title {
   @extend %grid-item-title;
@@ -131,4 +145,9 @@
     padding-top: 94px;
     padding-bottom: 94px;
   }
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

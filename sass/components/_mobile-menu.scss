@@ -78,11 +78,12 @@
   font-weight: 500;
   font-size: 34px;
   line-height: 1.17;
-
   letter-spacing: 0.02em;
-
   color: $accent-color;
   text-decoration: none;
+@media screen and (max-width:376px) {
+  font-size: 27px;
+}
 }
 .mobile-contacts-mail {
   font-weight: 500;
@@ -95,6 +96,7 @@
 .mobile-socials {
   @extend %list;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 64px;
   gap: 10px;
   &-link {
